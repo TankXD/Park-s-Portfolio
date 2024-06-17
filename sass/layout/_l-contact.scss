@@ -1,0 +1,39 @@
+@use "../global/" as g;
+
+.l-contact {
+  background: g.$color-l-green3;
+}
+
+.l-contact__inner {
+  display: flex;
+  flex-direction: column;
+  padding-block: 12rem;
+  align-items: center;
+  padding-inline: g.$padding-inline;
+  position: relative;
+  @include g.mq(lg) {
+    padding-block: 20rem;
+    flex-direction: row;
+    gap: 6rem;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+//////////form 있을때 버전 혹시몰라 백업용
+// .l-contact {
+//   padding-block: 12rem;
+//   background: g.$color-l-green3;
+//   @include g.mq(lg) {
+//     padding-block: 18rem;
+//   }
+// }
+
+// .l-contact__inner {
+//   margin-inline: auto;
+//   padding-inline: g.$padding-inline;
+//   @include g.mq(lg) {
+//     display: flex;
+//     justify-content: center;
+//   }
+// }

@@ -1,0 +1,42 @@
+@use "../global" as g;
+
+.l-profile {
+  position: relative;
+  margin-top: g.$header-ht-sm;
+  @include g.mq(md) {
+    margin-top: g.$header-ht-md;
+  }
+  @include g.mq(lg) {
+    margin-top: g.$header-ht-lg;
+  }
+}
+
+.l-profile__inner {
+  max-width: 130rem;
+  margin: 0 auto;
+  padding-bottom: calc(10rem + 10vw);
+  padding-top: clamp(16rem, 14.356rem + 4.384vw, 18rem);
+}
+
+.l-profile-intro {
+  padding-inline: g.$padding-inline;
+  border-bottom: 1px solid g.$color-gray-a2;
+  padding-bottom: 16rem;
+  min-height: 70vh;
+  // height: 100vh;
+  // display: flex;
+  // flex-direction: column;
+  // justify-content: center;
+}
+
+.l-profile-strength {
+  padding-block: 12rem 16rem;
+  padding-inline: g.$padding-inline;
+
+  border-bottom: 1px solid g.$color-gray-a2;
+}
+
+.l-profile-album {
+  padding-top: 12rem;
+  padding-inline: g.$padding-inline;
+}

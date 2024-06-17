@@ -1,0 +1,13 @@
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: "Montserrat", "Noto Sans JP", sans-serif;
+  font-size: 1.4rem;
+  color: #2d3939;
+  // color: black;
+
+  // カーソルが画面の外に出てもスクロールバーが出ないようにする
+  overflow-x: hidden;
+}

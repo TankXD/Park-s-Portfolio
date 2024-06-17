@@ -1,0 +1,98 @@
+@use "../global" as g;
+
+.p-contact-left {
+}
+
+.p-contact__img {
+  transition: opacity 0.3s ease;
+
+  img {
+    border-radius: 129px;
+    width: 35rem;
+    @include g.mq(md) {
+      aspect-ratio: 5/7;
+      height: auto;
+    }
+    @include g.mq(xl) {
+      max-width: 35rem;
+      max-height: 50rem;
+    }
+  }
+}
+
+.p-contact-right {
+  margin-top: 4rem;
+  @include g.mq(lg) {
+    margin-top: 0;
+  }
+}
+
+.p-contact__title {
+  transition: opacity 0.3s ease;
+  color: g.$color-gray-a2;
+  font-size: 1.6rem;
+  // font-weight: 600;
+}
+
+.p-contact__sub-title__wrap {
+  margin-top: 2rem;
+  font-size: 1.6rem;
+  font-weight: 400;
+
+  .is-hidden-text {
+    color: #646464;
+    font-size: clamp(1.2rem, 1.054rem + 0.39vw, 1.4rem);
+    transition: all 0.3s ease;
+    visibility: hidden;
+    opacity: 0;
+  }
+
+  @include g.mq(lg) {
+    margin-top: 2.8rem;
+  }
+  @include g.mq(xl) {
+    // font-size: 2.4rem;
+  }
+}
+
+.p-contact__email {
+  margin-top: 1.2rem;
+  color: g.$color-base;
+  // font-size: 7.2vw;
+  font-weight: 700;
+  font-size: clamp(2.7rem, 1.346rem + 3.61vw, 5.8rem);
+  @include g.mq(md) {
+    // font-size: 4vw;
+  }
+  @include g.mq(xxl) {
+    margin-top: 1rem;
+    // font-size: 6.4rem;
+  }
+}
+
+.p-contact__btn-wrap {
+  margin-top: 6rem;
+  transition: opacity 0.3s ease;
+
+  @include g.mq(lg) {
+    text-align: right;
+  }
+}
+
+.p-contact-btn {
+}
+
+//hover 이벤트
+
+.contact-email-hover {
+  & .p-contact__img,
+  & .p-contact__title,
+  & .p-contact__btn-wrap {
+    opacity: 0.6;
+  }
+
+  & .is-hidden-text {
+    opacity: 1;
+    visibility: visible;
+  }
+}

@@ -1,0 +1,47 @@
+@use "../global/" as g;
+.p-profile__title {
+  font-family: Poppins;
+  font-size: 42px;
+  font-weight: 275;
+  display: inline-block;
+  position: relative;
+
+  transform: translateX(-3rem);
+  &.is-show {
+    transform: translateX(0);
+  }
+
+  // &:before {
+  //   content: "";
+  //   width: 120%;
+  //   height: 1px;
+  //   position: absolute;
+  //   bottom: 0;
+  //   right: 0.5rem;
+  //   background-color: g.$color-gray;
+  // }
+
+  &:after {
+    content: "";
+    position: absolute;
+    width: 0.7em;
+    height: 0.7em;
+    // background-color: g.$color-d-green;
+    background-color: g.$color-green;
+    border-radius: 100% 0;
+    right: -10%;
+    bottom: -5%;
+    z-index: -1;
+  }
+}
+
+// observe animation
+.l-profile .js-no-show {
+  opacity: 0;
+  filter: blur(1px);
+  transition: color 0.5s ease, transform 1.2s ease, opacity 1.2s ease, filter 1.2s ease;
+  &.is-show {
+    filter: blur(0);
+    opacity: 1;
+  }
+}

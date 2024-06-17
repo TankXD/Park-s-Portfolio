@@ -1,0 +1,86 @@
+@use "../global/" as g;
+
+.p-about__left {
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+  position: relative;
+}
+
+.p-about__img {
+  text-align: center;
+  max-width: 43rem;
+  @include g.mq(xl) {
+    width: 48rem;
+    max-width: 48rem;
+  }
+  img {
+    width: 100%;
+    // border-radius: 26px;
+    border-radius: 0 300px;
+    // border: g.$color-d-green 1px solid;
+  }
+}
+.p-about__title {
+  margin-top: 0.8rem;
+  span {
+    color: #000;
+    font-family: Poppins;
+    font-size: 6.4rem;
+    font-weight: 700;
+    @include g.mq(xl) {
+      line-height: 1;
+    }
+  }
+  @include g.mq(xl) {
+    margin-top: 0;
+    position: absolute;
+    right: calc(50% - 8rem);
+    top: -3.4rem;
+    top: -2rem;
+    left: -2rem;
+    right: auto;
+  }
+}
+
+.p-about__right {
+  margin-top: 7rem;
+  margin-inline: auto;
+  @include g.mq(xl) {
+    margin-top: 0;
+  }
+}
+
+.p-about__sub-title {
+  color: rgba(45, 57, 57, 0.903);
+  // color: rgba(0, 0, 0, 0.9);
+  font-weight: 700;
+  font-size: g.$font-size-16-20;
+}
+
+.p-about__description {
+  color: rgba(0, 0, 0, 0.9);
+  margin-top: 2rem;
+  font-size: g.$font-size-15-18;
+  p {
+    font-weight: 500;
+    line-height: 1.8;
+  }
+  p:not(:first-child) {
+    margin-top: 2rem;
+  }
+}
+
+.p-about__bottom {
+  margin-top: 4rem;
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+  align-items: center;
+  small {
+    font-size: g.$font-size-12-14;
+  }
+}
+
+.p-about__contact-btn {
+}

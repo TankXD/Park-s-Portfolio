@@ -1,0 +1,48 @@
+// inner width
+$inner-width-lg: 1000px;
+
+// inner padding
+$padding-inline: clamp(2rem, 0.537rem + 3.902vw, 6rem); //375px = 20px (resposive)
+
+// color
+$color-base: #2d3939;
+$color-gray: #d5d5d5;
+$color-gray-a2: #a2a2a2;
+$color-l-gray: #f0f0f0;
+$color-green: #65816a;
+$color-d-green: #4d6851;
+$color-l-green: #d7eddb;
+$color-l-green2: #f9fffa;
+$color-l-green3: #fbfffc;
+$color-l-green4: #abb4ad;
+$color-red: #a90e0e;
+
+//font-size (375~1400 responsive)
+$font-size-14-18: clamp(1.4rem, 1.327rem + 0.195vw, 1.6rem);
+$font-size-15-18: clamp(1.5rem, 1.39rem + 0.293vw, 1.8rem);
+$font-size-16-20: clamp(1.64rem, 1.508rem + 0.351vw, 2rem);
+$font-size-12-14: clamp(1.2rem, 1.127rem + 0.195vw, 1.4rem);
+$fz-16-18: clamp(1.6rem, 1.357rem + 0.316vw, 1.8rem);
+
+// breakpoint
+$breakpoints: (
+  sp: "not screen and (min-width : 768px)",
+  md: "screen and (min-width: 768px)",
+  lg: "screen and (min-width: 1000px)",
+  xl: "screen and (min-width: 1200px)",
+  xxl: "screen and (min-width: 1400px)",
+  // 노트북처럼 세로높이가 짧은 화면에서만 적용, 일반pc나 모바일버전에서는 미적용되는 조건
+  notebook: "screen and (min-width: 768px) and (max-height: 1000px)",
+) !default;
+
+// header height
+$header-ht-sm: 8rem;
+$header-ht-md: 8rem;
+$header-ht-lg: 9.6rem;
+
+//z-index
+$zindex-header: 20;
+$zindex-drawer-btn: 60;
+$zindex-drawer-nav: 50;
+$zindex-footer-contact: 80;
+$zindex-loading: 100;

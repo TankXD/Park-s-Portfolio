@@ -1,0 +1,46 @@
+@use "../global" as g;
+
+.p-profile-album__body {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.p-profile-album-list {
+  margin-top: 8.8rem;
+  max-width: 80rem;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  row-gap: 3rem;
+  column-gap: 3rem;
+  @include g.mq(md) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.p-profile-album__item {
+  .p-profile-album__img {
+    overflow: hidden;
+    img {
+      transition: transform 0.4s ease, filter 0.3s ease;
+      filter: grayscale(0.7);
+    }
+  }
+  p {
+    color: g.$color-gray-a2;
+    font-family: Poppins;
+    font-size: 1.2rem;
+    font-weight: 400;
+    margin-top: 0.4rem;
+    transition: color 0.5s ease;
+  }
+}
+
+.p-profile-album__item:hover {
+  img {
+    transform: scale(1.05);
+    filter: grayscale(0);
+  }
+  p {
+    color: #000;
+  }
+}

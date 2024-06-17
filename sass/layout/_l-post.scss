@@ -1,0 +1,15 @@
+@use "../global/" as g;
+
+.l-post {
+  margin-top: 20rem;
+  margin-bottom: 15rem;
+  @include g.mq(sp) {
+    margin-block: 12rem;
+  }
+}
+
+.l-post__inner {
+  padding-inline: g.$padding-inline;
+  max-width: calc(1000px + g.$padding-inline * 2);
+  margin: 0 auto;
+}

@@ -1,0 +1,143 @@
+@use "../global" as g;
+
+.p-archive__title-wrap {
+  // text-align: center;
+}
+
+.p-archive__title {
+  color: #000;
+  font-weight: 700;
+  line-height: 1;
+  font-size: 6.4rem;
+  font-family: "Poppins";
+  @include g.mq(lg) {
+    font-size: 8rem;
+  }
+}
+
+.p-archive__sub-title {
+  font-size: 1.5rem;
+  margin-top: 0.6rem;
+}
+
+.p-archive__body {
+  margin-top: 10rem;
+
+  display: flex;
+  gap: 8rem;
+  flex-direction: column;
+  align-items: center;
+
+  @include g.mq(md) {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    row-gap: 8rem;
+    column-gap: 5vw;
+  }
+  @include g.mq(lg) {
+    row-gap: 10rem;
+  }
+}
+
+.p-archive__post-wrap {
+  position: relative;
+  max-width: 60rem;
+  @include g.mq(md) {
+    max-width: 100%;
+  }
+  &:hover {
+    .p-archive__post-description::after {
+      right: 0.5rem;
+    }
+    img {
+      opacity: 0.9;
+    }
+    .p-archive__post-bg {
+      background-color: #e7e7e7;
+    }
+  }
+}
+
+.p-archive__post {
+  @include g.mq(md) {
+    max-width: 90%;
+  }
+}
+
+.p-archive__post-img {
+  aspect-ratio: 335 / 250;
+  object-fit: cover;
+  border-radius: 12px;
+  border: 1px solid #000;
+  overflow: hidden;
+
+  img {
+    transition: 0.3s ease;
+  }
+}
+
+.p-archive__post-content {
+  margin-top: 1.6rem;
+  color: #000;
+}
+
+.p-archive__post-title {
+  font-size: clamp(2rem, 1.514rem + 0.633vw, 2.4rem);
+  font-weight: 700;
+}
+
+.p-archive__post-description {
+  position: relative;
+  margin-top: 0.2rem;
+  font-size: 1.6rem;
+  &::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+
+    transition: 0.3s ease;
+    right: 2rem;
+    width: 1rem;
+    height: 1rem;
+    border-top: solid 2px g.$color-gray-a2;
+    border-right: solid 2px g.$color-gray-a2;
+    transform: translateY(-50%) rotate(45deg);
+  }
+}
+
+.p-archive__post-bg {
+  width: 90%;
+  position: absolute;
+  top: 9rem;
+  left: 2.4rem;
+  background: g.$color-l-gray;
+  z-index: -1;
+  aspect-ratio: 380 / 310;
+  border-radius: 12px;
+  transition: 0.2s ease;
+}
+
+.p-archive-post__tools {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+  .p-archive-post__tool-tag {
+    font-size: clamp(1rem, 0.635rem + 0.475vw, 1.3rem);
+    @include g.mq(sp) {
+      font-size: 1.1rem;
+    }
+  }
+}
+
+// .p-archive__more-btn {
+//   margin-top: 6rem;
+//   text-align: center;
+//   @include g.mq(md) {
+//     margin-top: 12rem;
+//   }
+// }
+
+// archiveセクションの全体の bg //
+.p-archive__bg {
+}

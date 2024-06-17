@@ -1,0 +1,227 @@
+@use "../global/" as g;
+
+.p-header__logo {
+  // max-width: 148px;
+  transition: opacity 0.2s ease;
+
+  @include g.mq(md) {
+    // max-width: 170px;
+  }
+  @include g.mq(lg) {
+    // max-width: 280px;
+  }
+  a {
+    font-size: 2.2rem;
+    font-family: poppins;
+    font-style: italic;
+    @include g.mq(md) {
+      font-size: 2.4rem;
+    }
+    span {
+      font-weight: inherit;
+      @include g.mq(lg) {
+        display: inline-block;
+      }
+    }
+  }
+  &:hover {
+    opacity: 0.8;
+  }
+}
+
+.p-header__nav {
+  // margin-top: 0.2rem;
+
+  @include g.mq(lg) {
+    margin-top: 0;
+    // flex: 1;
+  }
+  @include g.mq(sp) {
+    display: none;
+  }
+}
+
+.p-header__list {
+  font-family: Poppins;
+  display: flex;
+  font-size: 1.4rem;
+  font-weight: 400;
+  gap: 1.6rem;
+  @include g.mq(md) {
+    font-size: 1.6rem;
+  }
+  @include g.mq(lg) {
+    gap: 2.8rem;
+    justify-content: flex-end;
+  }
+}
+
+.p-header__item {
+  color: g.$color-base;
+  a {
+    transition: color 0.3s ease;
+    &:hover {
+      color: #000;
+    }
+  }
+}
+
+.p-header__item:first-child {
+  position: relative;
+
+  &:after {
+    content: "";
+    border-radius: 50%;
+    position: absolute;
+    left: -3rem;
+    top: 33%;
+    width: 0.8rem;
+    height: 0.8rem;
+    background-color: #baeda2;
+    transform-origin: center center;
+  }
+  &:before {
+    content: "";
+    border-radius: 50%;
+    position: absolute;
+    left: -3rem;
+    top: 33%;
+    width: 0.8rem;
+    height: 0.8rem;
+    background-color: #a7de8d;
+    animation: spreadCircle 2s infinite;
+    transform-origin: center center;
+  }
+}
+
+@keyframes spreadCircle {
+  90% {
+    transform: scale(2);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(2);
+    opacity: 0;
+  }
+}
+
+// drawer btn
+
+.p-header__drawer__btn {
+  z-index: g.$zindex-drawer-btn;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 3.2rem;
+  height: 3.2rem;
+  position: relative;
+
+  transition: 0.7s cubic-bezier(0.23, 1, 0.32, 1);
+  border-radius: 0.4rem;
+  @include g.mq(md) {
+    display: none;
+  }
+
+  span {
+    position: absolute;
+    display: block;
+    width: 1.6rem;
+    height: 0.3rem;
+    border-radius: 2px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #000;
+    transition: 0.7s cubic-bezier(0.23, 1, 0.32, 1);
+    &:first-child {
+      top: calc(50% - 4px);
+    }
+    &:last-child {
+      top: calc(50% + 4px);
+    }
+  }
+
+  &::after {
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 100%;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    border-radius: 0.4rem;
+    background-color: g.$color-base;
+    transition: 0.7s cubic-bezier(0.23, 1, 0.32, 1);
+    z-index: -100;
+  }
+}
+
+.p-header__drawer__btn:not(.is-open):hover {
+  span {
+    background-color: #fff;
+    transform: translate(-50%) scale(0.7);
+  }
+  &::after {
+    transform: translate(-50%, -50%) scale(1);
+  }
+}
+.p-header__drawer__btn.is-open:hover {
+  opacity: 0.7;
+}
+
+.p-header__drawer__btn.is-open {
+  background-color: #fff;
+  span {
+    background-color: g.$color-base;
+  }
+  span:first-child {
+    top: 50%;
+    transform: translate(-50%) rotate(45deg);
+  }
+  span:last-child {
+    top: 50%;
+    transform: translate(-50%) rotate(-45deg);
+  }
+}
+
+// drawer
+
+.p-header__drawer {
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: g.$zindex-drawer-nav;
+  width: max(40vw, 20rem);
+  height: 35rem;
+  padding: 10rem 3rem 3rem;
+  border-radius: 0 0 0 4rem;
+  background-color: g.$color-base;
+  transition: transform 0.7s cubic-bezier(0.23, 1, 0.32, 1);
+  transform: translateX(110%);
+
+  &.is-open {
+    transform: translateX(0);
+  }
+  @include g.mq(md) {
+    transform: translateX(110%) !important;
+  }
+}
+
+.p-drawer__list {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1.6rem;
+}
+
+.p-darwer__item {
+  transition: 0.3s;
+  &:hover {
+    opacity: 0.8;
+    transform: translateX(1.6rem);
+  }
+  a {
+    font-size: 1.8rem;
+    color: #fff;
+  }
+}

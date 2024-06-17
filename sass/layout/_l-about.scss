@@ -1,0 +1,27 @@
+@use "../global/" as g;
+
+.l-about {
+  background: g.$color-l-green4;
+  // background: g.$color-green;
+  scroll-margin-top: 8rem;
+  @include g.mq(lg) {
+    scroll-margin-top: 20rem;
+  }
+}
+
+.l-about__inner {
+  padding-inline: g.$padding-inline;
+  padding-block: 10rem;
+  min-height: 100rem;
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  max-width: calc(1400px + g.$padding-inline * 2);
+  @include g.mq(xl) {
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+    gap: clamp(4.5rem, 3.22rem + 3.415vw, 10rem);
+  }
+}

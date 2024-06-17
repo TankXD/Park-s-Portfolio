@@ -1,0 +1,124 @@
+@use "../global" as g;
+
+.p-profile-strength__list {
+  margin-top: 6rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  column-gap: calc(80px / 900px * 100%);
+  row-gap: clamp(5rem, 3.902rem + 2.927vw, 8rem);
+}
+
+.p-profile-strength__item {
+  width: clamp(40rem, 38.171rem + 4.878vw, 45rem);
+  &:nth-child(n + 2) {
+    height: 50rem;
+    transform: perspective(800px) translateY(-5rem);
+    cursor: pointer;
+  }
+
+  &.is-show {
+    transform: translateY(0);
+  }
+  &:first-child {
+  }
+  &:nth-child(3) {
+    transition-delay: 0.2s !important;
+  }
+  &:nth-child(4) {
+    transition-delay: 0.4s !important;
+  }
+
+  // &:hover {
+  //   .strength__wrap {
+  //     transform: rotateY(180deg);
+  //   }
+  // }
+
+  &:hover {
+    .strength__front {
+      opacity: 0.85;
+    }
+  }
+}
+
+.strength__wrap {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transition: transform 0.7s ease;
+}
+
+.strength__wrap > * {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 0 10rem 0 0;
+  padding-top: 13px;
+  padding: 1em 2em 4em 2em;
+  backface-visibility: hidden;
+  box-shadow: 0 0 15px #0000001a;
+}
+
+.strength__wrap {
+  .strength__front {
+    background: linear-gradient(321deg, #2d3939 17.41%, rgb(45 57 57 / 92%) 38.41%, #2d3939 100%);
+    color: #fff;
+    transition: opacity 0.3s;
+  }
+  .strength__back {
+    border-top: 1.5rem solid g.$color-base;
+    box-shadow: 0 0 15px #0000001a;
+    transform: rotateY(180deg);
+  }
+}
+
+// front
+
+.strength__front {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  svg {
+    width: 2.5rem;
+    height: 2.5rem;
+    position: absolute;
+    top: 3rem;
+    left: 2rem;
+  }
+  .p-strength__front__num {
+    font-size: 4.6rem;
+    font-weight: 700;
+  }
+  .p-strength__front__title {
+    font-size: 3.4rem;
+    font-weight: 100;
+  }
+}
+
+// back
+
+.strength__back {
+  .p-profile-strength__number {
+    font-family: Montserrat;
+    font-size: 7.2rem;
+    font-weight: 100;
+  }
+
+  .p-profile-strength__sub-title {
+    margin-top: 4px;
+    font-size: 3.2rem;
+    font-weight: 700;
+  }
+
+  .p-profile-strength__description {
+    margin-top: 32px;
+    font-size: clamp(1.4rem, 1.157rem + 0.316vw, 1.6rem);
+    line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+  }
+}

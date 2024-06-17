@@ -1,0 +1,29 @@
+@use "../global/" as g;
+
+.l-archive {
+  margin-top: g.$header-ht-sm;
+  @include g.mq(md) {
+    margin-top: g.$header-ht-md;
+  }
+  @include g.mq(lg) {
+    margin-top: g.$header-ht-lg;
+  }
+
+  background-image: url("../img/work/work-bg-sp.svg");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: auto auto;
+  background-position: center;
+  @include g.mq(md) {
+    background-size: 90% auto;
+    background-image: url("../img/work/work-bg.svg");
+  }
+}
+
+.l-archive__inner {
+  padding-inline: 5.33333vw;
+  max-width: calc(1400px + 10.66666vw);
+  margin-inline: auto;
+  padding-top: clamp(16rem, 14.356rem + 4.384vw, 18rem);
+  padding-bottom: calc(10rem + 10vw);
+}

@@ -1,0 +1,35 @@
+@use "../global/" as g;
+
+.l-fv {
+  position: relative;
+  overflow: hidden;
+  background-image: url("../img/fv/fv-bg-sp.svg");
+  background-position: 100% 25vh;
+  background-repeat: repeat-x;
+  background-attachment: fixed;
+  background-size: 25% auto;
+  animation: autoSlideBg 30s linear infinite alternate;
+}
+
+.l-fv__inner {
+  padding-inline: g.$padding-inline;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  height: 100vh;
+  padding-top: g.$header-ht-sm;
+  @include g.mq(md) {
+    padding-top: g.$header-ht-md;
+  }
+  @include g.mq(lg) {
+    padding-top: g.$header-ht-lg;
+  }
+}
+
+@keyframes autoSlideBg {
+  100% {
+    background-position-x: -100%;
+  }
+}

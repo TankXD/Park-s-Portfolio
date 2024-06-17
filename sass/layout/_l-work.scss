@@ -1,0 +1,12 @@
+@use "../global/" as g;
+
+.l-work {
+  overflow: hidden;
+}
+
+.l-work__inner {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  // flex-wrap: nowrap;
+}

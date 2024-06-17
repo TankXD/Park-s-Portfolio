@@ -1,0 +1,24 @@
+@use "../global/" as g;
+
+.p-cursor {
+  position: absolute;
+  width: 1.2rem;
+  height: 1.2rem;
+
+  border-radius: 50%;
+  z-index: 500;
+  transform: translate(-50%, -50%);
+  transition: background 0.3s, transform 0.3s;
+  transform-origin: 75% 75%;
+  pointer-events: none;
+  background-color: g.$color-d-green;
+  box-shadow: 1px 2px 8px g.$color-d-green;
+
+  user-select: none;
+}
+
+.is-cursor-hover {
+  opacity: 0.5;
+  transform: scale(3);
+  box-shadow: none;
+}

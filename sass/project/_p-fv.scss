@@ -1,0 +1,205 @@
+@use "../global/" as g;
+
+.p-fv__title-wrap {
+}
+
+.p-fv__sub-title {
+  position: relative;
+  top: 1.5vw;
+  left: 0.8vw;
+
+  font-size: 2rem;
+  @include g.mq(md) {
+    font-size: 2.4rem;
+  }
+  @include g.mq(lg) {
+    font-size: 3.2rem;
+  }
+}
+
+.p-fv__title {
+  font-size: clamp(6.8rem, -0.088rem + 19.68vw, 22.8rem);
+  display: flex;
+  align-items: baseline;
+  line-height: clamp(6.8rem, -0.088rem + 19.68vw, 22.8rem);
+  .p-fv__title--left {
+    font-family: poppins;
+    font-weight: bold;
+  }
+  .p-fv__title--right {
+    font-family: Rampart One;
+  }
+  // svg {
+  //   width: 100%;
+  //   max-width: 106.4rem;
+  //   height: 100%;
+  // }
+}
+
+.p-fv__description {
+  margin-top: 6vw;
+  font-size: 1.6rem;
+  line-height: 1.8;
+
+  @include g.mq(md) {
+    font-size: 1.8rem;
+    margin-top: max(6vw, 60px);
+  }
+  @include g.mq(lg) {
+    font-size: 2rem;
+  }
+  @include g.mq(xxl) {
+    margin-top: min(6vw, 8.5rem);
+  }
+}
+
+.p-fv__scroll-down {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10rem;
+  position: relative;
+  background: #fff;
+  border-radius: 50%;
+  border: 1px solid #999;
+  width: 6rem;
+  height: 6rem;
+  &::before {
+    position: absolute;
+    display: block;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    content: "";
+    border-radius: 50%;
+    box-shadow: 0 0 0 1px #999;
+    animation: pulse 2s ease-in-out infinite;
+  }
+  .p-fv__scroll-arrow {
+    animation: bounce 1.5s infinite;
+    svg {
+      width: 2rem;
+      height: 2rem;
+      path {
+        fill: #999;
+      }
+    }
+  }
+}
+
+.p-fv-bg {
+  .p-fv-ball1,
+  .p-fv-ball2 {
+    position: absolute;
+
+    background-color: g.$color-green;
+    border-radius: 50%;
+  }
+  .p-fv-ball1 {
+    opacity: 0;
+    visibility: hidden;
+    width: clamp(60rem, 30rem + 21.429vw, 75rem);
+    height: clamp(60rem, 30rem + 21.429vw, 75rem);
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+    animation: swingBall1 3s linear infinite alternate;
+    @include g.mq(xxl) {
+      opacity: 0.1;
+      visibility: visible;
+    }
+  }
+  .p-fv-ball2 {
+    // width: 50rem;
+    // height: 50rem;
+    width: clamp(40rem, 30.909rem + 24.242vw, 60rem);
+    height: clamp(40rem, 30.909rem + 24.242vw, 60rem);
+    opacity: 0.05;
+    animation: swingBall2 3s linear infinite alternate;
+    @include g.mq(xl) {
+      width: clamp(60rem, 30rem + 21.429vw, 75rem);
+      height: clamp(60rem, 30rem + 21.429vw, 75rem);
+    }
+  }
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    opacity: 0;
+  }
+  50% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1.5);
+    opacity: 0;
+  }
+}
+
+@keyframes bounce {
+  0% {
+    transform: translateY(0.5rem);
+  }
+  20% {
+    transform: translateY(0.5rem);
+  }
+  40% {
+    transform: translateY(-1rem);
+  }
+  50% {
+    transform: translateY(0.5rem);
+  }
+  60% {
+    transform: translateY(-0.4rem);
+  }
+  80% {
+    transform: translateY(0.5rem);
+  }
+  100% {
+    transform: translateY(0.5rem);
+  }
+}
+
+@keyframes swingBall1 {
+  0% {
+    left: 17rem;
+    bottom: -35rem;
+  }
+  50% {
+    left: 18rem;
+    bottom: -29rem;
+  }
+  100% {
+    left: 16rem;
+    bottom: -30rem;
+  }
+}
+
+@keyframes swingBall2 {
+  0% {
+    left: -25rem;
+    bottom: -12rem;
+  }
+  50% {
+    left: -29rem;
+    bottom: -15rem;
+  }
+  100% {
+    left: -28rem;
+    bottom: -14rem;
+  }
+}
+
+//// 단순 bounce
+// @keyframes bounce {
+//   0% {
+//     transform: translateY(0.5rem);
+//   }
+//   50% {
+//     transform: translateY(-0.5rem);
+//   }
+//   100% {
+//     transform: translateY(0.5rem);
+//   }
+// }

@@ -1,0 +1,32 @@
+@use "../global/" as g;
+
+#loading {
+  animation: loading 1500ms cubic-bezier(0.7, 0, 0.17, 1) forwards;
+
+  background: #eff2f0;
+
+  z-index: g.$zindex-loading;
+  position: fixed;
+  top: 0;
+  left: -70%;
+  width: 300vw;
+
+  pointer-events: none;
+  height: 100vh;
+  transform-origin: right;
+  @include g.mq(md) {
+    left: -45%;
+  }
+  @include g.mq(lg) {
+    left: -25%;
+  }
+}
+
+@keyframes loading {
+  0% {
+    transform: scaleX(1) skewX(-30deg);
+  }
+  100% {
+    transform: scaleX(0) skewX(-30deg);
+  }
+}
