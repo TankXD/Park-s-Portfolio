@@ -1,5 +1,5 @@
 # portfolio
- 👋park's portfolio - 2024年6月
+ 👋park's portfolio - 2024年
 
 --- 
 
