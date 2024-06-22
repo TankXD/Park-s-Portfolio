@@ -43,9 +43,15 @@
 
     <header class="l-header js-header">
         <div class="l-header__inner">
-            <h1 class="p-header__logo">
-                <a href="<?php echo home_url('/'); ?>">
-                    PARK's <span class="u-is-hidden-not-lg">Web</span> Portfolio
+            <h1 class="p-header__logo js-header-logo">
+                <a href="<?php
+                    if(is_home()){
+                        echo '#';
+                    }
+                    else{
+                        echo home_url('/');
+                    } ?>">
+                    <span>P</span><span>A</span><span>R</span><span>K</span>
                 </a>
             </h1>
             <nav class="p-header__nav">

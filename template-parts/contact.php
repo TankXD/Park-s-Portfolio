@@ -26,9 +26,9 @@
                 <a href="https://github.com/TankXD?tab=repositories" target="_black" class="p-sns-item"><img
                         src="<?php echo get_template_directory_uri().'/img/common/github.svg' ?>"
                         alt="github link icon"></a>
-                <a href="#" target="_black" class="p-sns-item"><img
+                <a href="https://www.wantedly.com/id/c_p_c" target="_black" class="p-sns-item"><img
                         src="<?php echo get_template_directory_uri().'/img/common/wantedly.svg' ?>"
-                        alt="github link icon"></a>
+                        alt="wantedly link icon"></a>
             </div>
             <div class="p-copyright">
                 <span>All rights reserved</span><span>© 2024 <strong class="is-bold">CHAN</strong></span>

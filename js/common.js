@@ -1,4 +1,4 @@
-// cursor //
+// ## cursor ##
 let cursor = document.querySelector(".p-cursor");
 
 function moveCursor(e) {
@@ -44,15 +44,30 @@ if (document.querySelector(".l-work")) {
     cursor.style.display = "block";
   });
 }
-// /cursor //
+// ## cursor ##
 
-// header //
-
+// ## header ##
 gsap.set(".js-header", { y: -100, opacity: 0 });
 gsap.to(".js-header", { y: 0, opacity: 1, duration: 1, delay: 0.5 });
+const headerLogos = document.querySelectorAll(".js-header-logo span");
+console.log(headerLogos);
 
-// smooth scroll //
+// scroll event
+window.addEventListener("scroll", () => {
+  if (window.scrollY > 100) {
+    headerLogos.forEach((el) => {
+      el.classList.add("is-slide");
+    });
+  } else {
+    headerLogos.forEach((el) => {
+      el.classList.remove("is-slide");
+    });
+  }
+});
 
+// ## header ##
+
+// ##smooth scroll ##
 jQuery(($) => {
   $('a[href^="#"]').on("click", function (e) {
     e.preventDefault();
@@ -69,11 +84,10 @@ jQuery(($) => {
     );
   });
 });
-
-// /smooth scroll //
+// ##smooth scroll ##
 
 // hover animation //
-// ## contact section ## //
+// ## contact section ##
 const contactEmail = document.querySelector(".is-contact-email");
 contactEmail.addEventListener("mouseover", () => {
   document.querySelector("#contact").classList.add("contact-email-hover");
@@ -81,8 +95,9 @@ contactEmail.addEventListener("mouseover", () => {
 contactEmail.addEventListener("mouseout", () => {
   document.querySelector("#contact").classList.remove("contact-email-hover");
 });
+// ## contact section ##
 
-// ## about page - profile section ## //
+// ## about page - profile section ##
 const strongText = document.querySelector(".js-strong-border");
 if (strongText) {
   strongText.addEventListener("mouseover", () => {
@@ -92,9 +107,10 @@ if (strongText) {
     document.querySelector(".js-hover-transparent").style.color = "rgba(0, 0, 0, 1)";
   });
 }
+// ## about page - profile section ##
 // /hover animation //
 
-// drawer menu //
+// ## drawer menu ##
 const drawerBtn = document.querySelector(".js-drawer-btn");
 const drawer = document.querySelector(".js-drawer");
 drawerBtn.addEventListener("click", function () {
@@ -114,9 +130,9 @@ if (document.querySelector(".js-close-drawer")) {
   });
 }
 
-// /drawer menu //
+// ## drawer menu ##
 
-// about page - scroll&click //
+// ## about page - scroll&click ##
 
 if (document.querySelector(".js-about-inner")) {
   const noShowElements = document.querySelectorAll(".js-no-show");
@@ -148,4 +164,4 @@ if (document.querySelector(".js-about-inner")) {
   });
 }
 
-// /about page - scroll&click //
+// ## about page - scroll&click ##
