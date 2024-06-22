@@ -57,17 +57,18 @@
             <nav class="p-header__nav">
                 <ul class="p-header__list">
                     <li class="p-header__item">
-                        <a href="<?php echo home_url('/about'); ?>">ABOUT</a>
+                        <a data-text="ABOUT" href="<?php echo home_url('/about'); ?>">
+                            <span>ABOUT</span></a>
                     </li>
                     <li class="p-header__item">
-                        <a href="<?php echo home_url('/works'); ?>">WORKS</a>
+                        <a data-text="WORKS" href="<?php echo home_url('/works'); ?>"><span>WORKS</span></a>
                     </li>
                     <li class="p-header__item">
                         <?php if( is_home() ) : ?>
                         <!-- ホーム画面には横スクロールがあるのでスムーズスクロール防止 -->
-                        <a href="<?php echo home_url('#contact') ?>">CONTACT</a>
+                        <a data-text="CONTACT" href="<?php echo home_url('#contact') ?>"><span>CONTACT</span></a>
                         <?php else:?>
-                        <a href="#contact">CONTACT</a>
+                        <a data-text="CONTACT" href="#contact"><span>CONTACT</span></a>
                         <?php endif;?>
                     </li>
                 </ul>
@@ -78,13 +79,13 @@
             </button>
             <nav class="p-header__drawer js-drawer">
                 <ul class="p-drawer__list">
-                    <li class="p-darwer__item">
+                    <li class="p-drawer__item">
                         <a data-text="ABOUT" href="<?php echo home_url('/about'); ?>">ABOUT</a>
                     </li>
-                    <li class="p-darwer__item">
+                    <li class="p-drawer__item">
                         <a data-text="WORKS" href="<?php echo home_url('/works'); ?>">WORKS</a>
                     </li>
-                    <li class="p-darwer__item">
+                    <li class="p-drawer__item">
                         <?php if( is_home() ) : ?>
                         <!-- ホーム画面には横スクロールがあるのでスムーズスクロール防止 -->
                         <a data-text="CONTACT" href="<?php echo home_url('#contact') ?>">CONTACT</a>
