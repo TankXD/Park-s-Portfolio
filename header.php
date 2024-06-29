@@ -4,22 +4,42 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PARK's Web Portfolio</title>
+
     <!-- meta -->
-    <meta name="description" content="パクのウェブポートフォリオサイト || Wordpressで制作">
-    <meta name="keywords" content="ポートフォリオ,ポートフォリオサイト,ウェブ制作,コーダー,フロントエンド,ウェブデザイン">
-    <!-- OGP -->
-    <meta property="og:title" content="PARK's Web Portfolio">
-    <meta property="og:description" content="パクのウェブポートフォリオサイト, Wordpressで制作">
+    <title><?php wp_title('|', true, 'right');?><?php bloginfo('name')?></title>
+    <meta property="og:title" content="<?php wp_title('|', true, 'right'); ?><?php bloginfo('name') ?>">
+
+    <?php if(is_single()):?>
+    <meta name="description" content="<?php wp_title('サイトの詳細ページです。', true, 'right');?><?php bloginfo('description') ?>">
+    <meta property="og:description"
+        content="<?php wp_title('サイトの詳細ページです。', true, 'right');?><?php bloginfo('description') ?>">
+    <?php else:?>
+    <meta name="description" content="<?php wp_title('ページです。', true, 'right');?><?php bloginfo('description') ?>">
+    <meta property="og:description"
+        content="<?php wp_title('ページです。', true, 'right');?><?php bloginfo('description') ?>">
+    <?php endif;?>
+
+    <?php if(is_home()):?>
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://park-xd.com/">
+    <?php else:?>
+    <meta property="og:type" content="article">
+    <?php endif; ?>
+    <?php if(is_home()):?>
+    <meta property="og:url" content="<?php echo home_url('/') ?>">
+    <?php elseif(is_single()):?>
+    <meta property="og:url" content="<?php the_permalink() ?>">
+    <?php elseif(is_archive()):?>
+    <meta property="og:url" content="<?php echo get_post_type_archive_link(get_post_type()) ?>">
+    <?php elseif(is_page()):?>
+    <meta property="og:url" content="<?php the_permalink() ?>">
+    <?php endif;?>
+
+    <meta name="keywords" content="ポートフォリオ,ポートフォリオサイト,ウェブ制作,コーダー,フロントエンド,ウェブデザイン">
     <meta property="og:locale" content="ja_JP">
     <meta property="og:site_name" content="PARK's Web Portfolio">
     <meta property="og:image" content="<?php echo get_template_directory_uri() .'/img/ogp/ogp.png'?>">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
-
-
 
     <meta name="author" content="PARK SUNG CHAN">
     <link rel="apple-touch-icon" sizes="180x180"
