@@ -82,12 +82,12 @@
                         任された仕事には常に最善を尽くし、強い責任感を持っています。</p>
                 </div>
                 <div class="p-about__bottom">
-                    <a href="<?php echo home_url('/about')?>" class="p-about__contact-btn c-btn-contact">
-                        ABOUT ME
-                    </a>
                     <small>
                         サッカーと国内旅行が好きです:)
                     </small>
+                    <a href="<?php echo home_url('/about')?>" class="p-about__contact-btn c-btn-contact">
+                        ABOUT ME
+                    </a>
                 </div>
             </div>
         </div>

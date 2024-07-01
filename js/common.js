@@ -1,3 +1,5 @@
+gsap.registerPlugin(ScrollTrigger);
+
 // ## cursor ##
 let cursor = document.querySelector(".p-cursor");
 
@@ -37,13 +39,25 @@ hoverTarget.forEach((el) => {
 });
 
 if (document.querySelector(".l-work")) {
-  document.querySelector(".l-work").addEventListener("mouseover", () => {
-    cursor.style.display = "none";
+  const workSection = document.querySelector(".l-work");
+  workSection.addEventListener("mouseover", () => {
+    cursor.classList.add("is-hide");
+    window.removeEventListener("mousemove", moveCursor);
   });
-  document.querySelector(".l-work").addEventListener("mouseout", () => {
-    cursor.style.display = "block";
+  workSection.addEventListener("mouseout", () => {
+    cursor.classList.remove("is-hide");
+    window.addEventListener("mousemove", moveCursor);
   });
 }
+
+document.addEventListener("mouseleave", () => {
+  cursor.classList.add("is-hide");
+});
+
+document.addEventListener("mouseenter", () => {
+  cursor.classList.remove("is-hide");
+});
+
 // ## cursor ##
 
 // ## header ##
@@ -165,3 +179,40 @@ if (document.querySelector(".js-about-inner")) {
 }
 
 // ## about page - scroll&click ##
+
+// ## archive-works page ##
+
+if (document.querySelector(".js-archive")) {
+  const reverseTexts = Array.from(document.querySelectorAll(".js-archive-bg path")).reverse();
+  const archiveBgTexts = reverseTexts;
+  const archiveTitle = document.querySelector(".js-archive-title");
+  const archivePosts = document.querySelectorAll(".js-archive-post");
+
+  gsap.set(archiveBgTexts, { y: -300 });
+  gsap.set(archiveTitle, { y: -100, opacity: 0 });
+  gsap.set(archivePosts, { opacity: 0, y: 30 });
+  const archiveTl = gsap.timeline();
+  // loading
+  window.addEventListener("load", () => {
+    setTimeout(() => {
+      archiveTl
+        .to(archiveBgTexts, { y: 0, duration: 0.03, stagger: 0.1, ease: "power4.out" })
+        .to(archiveTitle, { y: 0, opacity: 1, duration: 1, ease: "bounce.out" });
+      // scrollTrigger
+      archivePosts.forEach((e) => {
+        gsap.to(e, {
+          delay: 0.1,
+          opacity: 1,
+          y: 0,
+          duration: 0.5,
+          scrollTrigger: {
+            trigger: e,
+            start: "top 98%",
+            toggleActions: "play none none none",
+            markers: true,
+          },
+        });
+      });
+    }, 500);
+  });
+}

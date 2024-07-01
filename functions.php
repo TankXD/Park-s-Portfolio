@@ -1,4 +1,4 @@
-<?php 
+<?php
     function my_script_init(){
         wp_enqueue_style('mystyle', get_template_directory_uri() . '/css/style.css', array(), filemtime(get_theme_file_path('css/style.css')), 'all');
         

@@ -1,6 +1,7 @@
 @use "../global/" as g;
 
 .l-archive {
+  position: relative;
   margin-top: g.$header-ht-sm;
   @include g.mq(md) {
     margin-top: g.$header-ht-md;
@@ -9,15 +10,15 @@
     margin-top: g.$header-ht-lg;
   }
 
-  background-image: url("../img/work/work-bg-sp.svg");
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-size: auto auto;
-  background-position: center;
-  @include g.mq(md) {
-    background-size: 90% auto;
-    background-image: url("../img/work/work-bg.svg");
-  }
+  // background-image: url("../img/work/work-bg-sp.svg");
+  // background-repeat: no-repeat;
+  // background-attachment: fixed;
+  // background-size: auto auto;
+  // background-position: center;
+  // @include g.mq(md) {
+  //   background-size: 90% auto;
+  //   background-image: url("../img/work/work-bg.svg");
+  // }
 }
 
 .l-archive__inner {

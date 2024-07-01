@@ -1,7 +1,7 @@
 @use "../global" as g;
 
 .p-archive__title-wrap {
-  // text-align: center;
+  text-align: center;
 }
 
 .p-archive__title {
@@ -21,7 +21,7 @@
 }
 
 .p-archive__body {
-  margin-top: 10rem;
+  margin-top: clamp(10rem, 6.183rem + 10.178vw, 14rem);
 
   display: flex;
   gap: 8rem;
@@ -140,4 +140,28 @@
 
 // archiveセクションの全体の bg //
 .p-archive__bg {
+  height: 100vh;
+  position: fixed;
+
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: -1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  @include g.mq(md) {
+    align-items: flex-start;
+    top: calc(10rem + 20vh);
+  }
+  svg {
+    transform: rotate(90deg);
+    min-width: 130vw;
+    overflow: hidden;
+    @include g.mq(md) {
+      transform: rotate(0);
+      min-width: auto;
+      width: 90%;
+    }
+  }
 }
